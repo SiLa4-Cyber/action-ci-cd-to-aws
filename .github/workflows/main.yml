@@ -5,7 +5,8 @@ env:
   EB_ENVIRONMENT_NAME      : "Myflask-env"
   DEPLOY_PACKAGE_NAME      : "flask_app_${{  github.sha  }}.zip"
   AWS_REGION_NAME          : "us-east-1"
-  
+  MY_AWS_ACCESS_KEY        : "AKIA3ZUC2ZF7XPL2VNGL"
+  MY_AWS_SECRET_KEY        : "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"
 
 
 on:
@@ -28,8 +29,8 @@ jobs:
     - name: Configure my AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with: 
-        aws-access-key-id    : ${{  secrets.MY_AWS_ACCESS_KEY  }}
-        aws-secret-access-key: ${{  secrets.MY_AWS_SECRET_KEY  }}
+        aws-access-key-id    : ${{  env.MY_AWS_ACCESS_KEY  }}
+        aws-secret-access-key: ${{  env.MY_AWS_SECRET_KEY  }}
         aws-region           : ${{  env.AWS_REGION_NAME  }}
         
     - name: Copy Deployment package to S3 bucket

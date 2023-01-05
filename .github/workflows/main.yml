@@ -27,8 +27,8 @@ jobs:
     
     - name: Configure my AWS Credentials
       env: 
-        MY_AWS_ACCESS_KEY: "${{  secrets.MY_AWS_ACCESS_KEY  }}"
-        MY_AWS_SECRET_KEY: "${{  secrets.MY_AWS_SECRET_KEY  }}"
+        MY_AWS_ACCESS_KEY: "${{  secrets.MY_AWS_ACCESS_KEY2  }}"
+        MY_AWS_SECRET_KEY: "${{  secrets.MY_AWS_SECRET_KEY2  }}"
         
       uses: aws-actions/configure-aws-credentials@v1
       with:  

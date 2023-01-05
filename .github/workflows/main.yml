@@ -1,6 +1,6 @@
 name: CI-CD_pipeline-to-AWS-ElastikBeastalk
 env:
-  EB_PACKAGE_S3_BUCKET_NAME: "myawsbucket-test-322"
+  EB_PACKAGE_S3_BUCKET_NAME: "bucket-test-322"
   EB_APPLICATION_NAME      : "Flask-test"
   EB_ENVIRONMENT_NAME      : "Flasktest-env"
   DEPLOY_PACKAGE_NAME      : "flask_app_${{  github.sha  }}.zip"
@@ -12,6 +12,11 @@ on:
   push:
     branches:
     - main
+  pull_request:
+permissions:
+      id-token: write # This is required for aws oidc connection
+      contents: read # This is required for actions/checkout
+      pull-requests: write # This is required for gh bot to comment PR
     
 jobs:  
   CI-part:
@@ -29,7 +34,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:  
         aws-region           : ${{  env.AWS_REGION_NAME  }}
-        role-to-assume       : arn:aws:iam::810949462399:user/test-GITAction
+        role-to-assume       : arn:aws:iam::810949462399:role/test-git-action-322
         role-session-name    : action-ci-cd-to-aws
         
     - name: Copy Deployment package to S3 bucket

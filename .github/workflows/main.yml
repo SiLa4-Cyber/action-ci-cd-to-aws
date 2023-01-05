@@ -13,14 +13,7 @@ on:
     branches:
     - main
     
-jobs:
-
-  call-workflow:
-    uses: SiLa4-Cyber/action-ci-cd-to-aws/.github/workflows/main.yml@main
-    secrets:
-      aws-key: ${{ secrets.MY_AWS_ACCESS_KEY }}
-      aws-secret-key: ${{  secrets.MY_AWS_SECRET_KEY  }}
-  
+jobs:  
   CI-part:
     runs-on: ubuntu-latest
     

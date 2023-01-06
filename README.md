@@ -8,4 +8,4 @@ Further we need to create S3 Bucket and ElasticBeanstalk
 
 The last steps are to change the variables in the main file
 
-<br><img src=https://drive.google.com/file/d/11ok0aBn8y0RVT7zY6pLL3Ul01JTXjisD/view?usp=share_link><br>
+<br><img src="REadme-aws.jpg"><br>

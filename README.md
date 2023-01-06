@@ -4,4 +4,4 @@
 
 
 Status of Last Deployment:<br>
-<img src="https://github.com/adv4000/github-actions-part-2-cicd-to-aws/workflows/CI-CD-Pipeline-to-AWS-ElasticBeastalk/badge.svg?branch=master"><br>
+<img src="https://github.com/SiLa4-Cyber/action-ci-cd-to-aws/workflows/CI-CD_pipeline-to-AWS-ElastikBeastalk/badge.svg?branch=master"><br>

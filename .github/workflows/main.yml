@@ -1,11 +1,11 @@
 name: CI-CD_pipeline-to-AWS-ElastikBeastalk
 env:
-  EB_PACKAGE_S3_BUCKET_NAME: "bucket-test-322"
-  EB_APPLICATION_NAME      : "Flask-test"
-  EB_ENVIRONMENT_NAME      : "Flasktest-env"
-  DEPLOY_PACKAGE_NAME      : "flask_app_322.zip"
-  AWS_REGION_NAME          : "us-east-1"
-  AWS_ARN                  : "arn:aws:iam::810949462399:role/test-git-action-322"
+  EB_PACKAGE_S3_BUCKET_NAME: "ANY_NAME"
+  EB_APPLICATION_NAME      : "ANY_NAME"
+  EB_ENVIRONMENT_NAME      : "APPLICATION_NAME-env"
+  DEPLOY_PACKAGE_NAME      : "ANY_NAME"
+  AWS_REGION_NAME          : "ANY_REGION"
+  AWS_ARN                  : "arn:aws:iam::YOUR_ACCOUN_ID_AMAZON:role/test-git-action-322"
 
 
 on:

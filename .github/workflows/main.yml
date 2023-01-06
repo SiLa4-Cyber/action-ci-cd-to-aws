@@ -5,6 +5,7 @@ env:
   EB_ENVIRONMENT_NAME      : "Flasktest-env"
   DEPLOY_PACKAGE_NAME      : "flask_app_322.zip"
   AWS_REGION_NAME          : "us-east-1"
+  AWS_ARN                  : "arn:aws:iam::810949462399:role/test-git-action-322"
 
 
 on:
@@ -28,7 +29,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:  
         aws-region           : ${{  env.AWS_REGION_NAME  }}
-        role-to-assume       : ${{  secrets.AWS_ARN  }}
+        role-to-assume       : ${{  env.AWS_ARN  }}
         role-session-name    : action-ci-cd-to-aws
         
     - name: Copy Deployment package to S3 bucket
@@ -46,7 +47,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:  
         aws-region           : ${{  env.AWS_REGION_NAME  }}
-        role-to-assume       : ${{  secrets.AWS_ARN  }}
+        role-to-assume       : ${{  env.AWS_ARN  }}
         role-session-name    : action-ci-cd-to-aws
     
     - name: Create new ElasticBeanstalk Application Version
